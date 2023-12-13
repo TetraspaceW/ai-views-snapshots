@@ -10,12 +10,12 @@ td {
 
 .empty {
   background: none;
-  height: 0;
+  height: 1px;
 }
 
 .mine {
   background-color: #d9ead3ff;
-  height: 0;
+  height: 1px;
 }
 .mine.key-container {
   border-color: #b6d7a8;
@@ -23,7 +23,7 @@ td {
 
 .possible {
   background-color: #c9daf8ff;
-  height: 0;
+  height: 1px;
 }
 .possible.key-container {
   border-color: #a4c2f4;
@@ -31,7 +31,7 @@ td {
 
 .reasonable {
   background-color: #d9d2e9ff;
-  height: 0;
+  height: 1px;
 }
 .reasonable.key-container {
   border-color: #b4a7d6;
@@ -39,7 +39,7 @@ td {
 
 .unreasonable {
   background-color: #f4ccccff;
-  height: 0;
+  height: 1px;
 }
 .unreasonable.key-container {
   border-color: #e6b8af;
