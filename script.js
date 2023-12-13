@@ -69,8 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let html = document.documentElement.outerHTML;
     let iframe = document.createElement("iframe");
     iframe.sandbox = "allow-same-origin";
-    iframe.style.width = "1920px";
-    iframe.style.height = "100%";
     document.body.appendChild(iframe);
     iframe.srcdoc = html;
 
