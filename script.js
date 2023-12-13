@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var probabilities = ["Below 1%", "~10%", "~50%", "~90%", "Above 99%"];
 
+  if (document.getElementsByClassName("row-container").length) {
+    return;
+  }
+
   questions.forEach((row) => {
     var rowContainer = document.createElement("div");
     rowContainer.className = "row-container";
@@ -68,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
   exportBtn.addEventListener("click", function () {
     let html = document.documentElement.outerHTML;
     let iframe = document.createElement("iframe");
-    iframe.sandbox = "allow-same-origin";
+    iframe.sandbox = "allow-same-origin allow-scripts";
     document.body.appendChild(iframe);
     iframe.srcdoc = html;
 
