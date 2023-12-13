@@ -75,12 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
     iframe.addEventListener("load", () => {
       html2canvas(iframe.contentWindow.document.getElementById("content"))
         .then(function (canvas) {
-          let filename = "ai-views-snapshots.png";
-          let link = document.createElement("a");
-          link.download = filename.toLowerCase();
           canvas.toBlob(function (blob) {
-            link.href = URL.createObjectURL(blob);
-            link.click();
+            window.open(URL.createObjectURL(blob), "_blank");
           }, "image/png");
         })
         .finally(function () {
