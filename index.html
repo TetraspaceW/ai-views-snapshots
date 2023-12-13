@@ -6,23 +6,30 @@
   </head>
   <body>
     <div id="content">
-      <div class="colour-code-container">
-        <p class="key-caption">Colour code:</p>
-        <div class="mine key-container">
-          My probability is roughly something like this.
+      <div class="colour-code-background">
+        <div class="colour-code-container">
+          <p class="key-caption">Colour code:</p>
+          <div class="mine key-container">
+            My probability is roughly something like this.
+          </div>
+          <div class="possible key-container">
+            I could maybe see myself updating to a view like this after a lot
+            more thinking or after seeing a little more evidence.
+          </div>
+          <div class="reasonable key-container">
+            I feel confident this view is wrong, but I could easily see a
+            reasonable and informed person having this view.
+          </div>
+          <div class="unreasonable key-container">
+            I don't currently see a way for a reasonable and well-informed
+            person to end up with this view.
+          </div>
         </div>
-        <div class="possible key-container">
-          I could maybe see myself updating to a view like this after a lot more
-          thinking or after seeing a little more evidence.
-        </div>
-        <div class="reasonable key-container">
-          I feel confident this view is wrong, but I could easily see a
-          reasonable and informed person having this view.
-        </div>
-        <div class="unreasonable key-container">
-          I don't currently see a way for a reasonable and well-informed person
-          to end up with this view.
-        </div>
+
+        <label class="colourblind-checkbox" id="colourblind-checkbox"
+          >Colourblind mode:
+          <input type="checkbox" onClick="toggleColourBlind()"
+        /></label>
       </div>
 
       <div id="tablesContainer" class="table-container">
