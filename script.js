@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   var colors = ["empty", "mine", "possible", "reasonable", "unreasonable"];
-  var table = document.getElementById("colorTable");
 
   var questions = [
     ["It's physically impossible to ever build STEM+ AI."],
@@ -67,12 +66,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var exportBtn = document.getElementById("exportBtn");
   exportBtn.addEventListener("click", function () {
-    var body = document.getElementById("body");
-    html2canvas(body).then(function (canvas) {
-      var link = document.createElement("a");
-      link.download = "table.png";
-      link.href = canvas.toDataURL("image/png");
-      link.click();
+    let html = document.documentElement.outerHTML;
+    let iframe = document.createElement("iframe");
+    iframe.sandbox = "allow-same-origin";
+    iframe.style.width = "1920px";
+    iframe.style.height = "100%";
+    document.body.appendChild(iframe);
+    iframe.srcdoc = html;
+
+    iframe.addEventListener("load", () => {
+      html2canvas(iframe.contentWindow.document.getElementById("content"))
+        .then(function (canvas) {
+          let filename = "ai-views-snapshots.png";
+          let link = document.createElement("a");
+          link.download = filename.toLowerCase();
+          canvas.toBlob(function (blob) {
+            link.href = URL.createObjectURL(blob);
+            link.click();
+          }, "image/png");
+        })
+        .finally(function () {
+          document.body.removeChild(iframe);
+        });
     });
   });
 });

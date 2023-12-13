@@ -104,6 +104,14 @@ td {
 }
 
 .export-button {
-  font-size: large;
-  text-align: center;
+  font-size: x-large;
+  display: block;
+  margin: auto;
+  padding: 0.5em 1em;
+}
+
+iframe {
+  position: absolute;
+  left: -100000px;
+  top: -100000px;
 }
