@@ -41,6 +41,7 @@ td {
 }
 
 .probability-row {
+  cursor: pointer;
   height: 0;
 }
 
