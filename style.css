@@ -20,7 +20,7 @@ td {
 .mine.key-container {
   border-color: #b6d7a8;
 }
-.colourblind .mine.mine {
+.colour-blind .mine.mine {
   background-color: #38761dff;
   color: #ffffff;
 }
@@ -32,7 +32,7 @@ td {
 .possible.key-container {
   border-color: #a4c2f4;
 }
-.colourblind .possible {
+.colour-blind .possible {
   background-color: #6d9eebff;
 }
 
@@ -43,7 +43,7 @@ td {
 .reasonable.key-container {
   border-color: #b4a7d6;
 }
-.colourblind .reasonable {
+.colour-blind .reasonable {
   background-color: #b4a7d6ff;
 }
 
@@ -54,7 +54,7 @@ td {
 .unreasonable.key-container {
   border-color: #e6b8af;
 }
-.colourblind .unreasonable {
+.colour-blind .unreasonable {
   background-color: #f4ccccff;
 }
 
@@ -86,21 +86,21 @@ td {
   padding: 0.5em;
   height: auto;
 }
-.colourblind .key-container {
+.colour-blind .key-container {
   color: #000000;
 }
 .key-caption {
   color: #666666;
   margin: 0.5em;
 }
-.colourblind .key-caption {
+.colour-blind .key-caption {
   color: #000000;
 }
-.colourblind-checkbox {
+.colour-blind-checkbox {
   margin: auto;
   color: #666666;
 }
-.colourblind .colourblind-checkbox {
+.colour-blind .colour-blind-checkbox {
   color: #000000;
 }
 

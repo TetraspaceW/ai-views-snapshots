@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     iframe.addEventListener("load", () => {
       iframe.contentWindow.document.getElementById(
-        "colourblind-checkbox"
+        "colour-blind-checkbox"
       ).style.display = "none";
       html2canvas(iframe.contentWindow.document.getElementById("content"))
         .then(function (canvas) {
@@ -98,5 +98,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleColourBlind() {
   content = document.getElementById("content");
-  content.className = content.className == "colourblind" ? "" : "colourblind";
+  content.className = content.className == "colour-blind" ? "" : "colour-blind";
 }
