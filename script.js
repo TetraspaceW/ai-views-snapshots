@@ -72,11 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
   exportBtn.addEventListener("click", function () {
     let html = document.documentElement.outerHTML;
     let iframe = document.createElement("iframe");
-    iframe.sandbox = "allow-same-origin allow-scripts";
     document.body.appendChild(iframe);
     iframe.srcdoc = html;
 
     iframe.addEventListener("load", () => {
+      iframe.contentWindow.document.getElementById(
+        "colourblind-checkbox"
+      ).style.display = "none";
       html2canvas(iframe.contentWindow.document.getElementById("content"))
         .then(function (canvas) {
           let filename = "ai-views-snapshots.png";
@@ -93,3 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function toggleColourBlind() {
+  content = document.getElementById("content");
+  content.className = content.className == "colourblind" ? "" : "colourblind";
+}
