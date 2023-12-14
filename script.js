@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var colors = ["empty", "mine", "possible", "reasonable", "unreasonable"];
+  var colours = ["empty", "mine", "possible", "reasonable", "unreasonable"];
 
   var questions = [
     ["It's physically impossible to ever build STEM+ AI."],
@@ -54,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
         cell.textContent = probability;
 
         cell.addEventListener("click", function () {
-          var currentColor = this.className;
-          var nextColor =
-            colors[(colors.indexOf(currentColor) + 1) % colors.length];
-          this.className = nextColor;
+          var currentColour = this.className;
+          var nextColour =
+            colours[(colours.indexOf(currentColour) + 1) % colours.length];
+          this.className = nextColour;
         });
       });
 
