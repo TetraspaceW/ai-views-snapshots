@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var colours = ["empty", "mine", "possible", "reasonable", "unreasonable"];
+  const colours = ["empty", "mine", "possible", "reasonable", "unreasonable"];
 
-  var questions = [
+  const questions = [
     ["It's physically impossible to ever build STEM+ AI."],
     [
       "STEM+ AI will exist by the year 2035.",
@@ -26,36 +26,36 @@ document.addEventListener("DOMContentLoaded", function () {
     ["It would be an unprecedentedly huge tragedy if we never built STEM+ AI."],
   ];
 
-  var probabilities = ["Below 1%", "~10%", "~50%", "~90%", "Above 99%"];
+  const probabilities = ["Below 1%", "~10%", "~50%", "~90%", "Above 99%"];
 
   if (document.getElementsByClassName("row-container").length) {
     return;
   }
 
   questions.forEach((row) => {
-    var rowContainer = document.createElement("div");
+    const rowContainer = document.createElement("div");
     rowContainer.className = "row-container";
 
     row.forEach((question) => {
-      var table = document.createElement("table");
+      const table = document.createElement("table");
       table.className = "prediction-table";
 
-      var header = table.insertRow();
-      var headerCell = header.insertCell();
+      const header = table.insertRow();
+      const headerCell = header.insertCell();
       headerCell.colSpan = probabilities.length;
       headerCell.textContent = question;
 
-      var row = table.insertRow();
+      const row = table.insertRow();
       row.className = "probability-row";
 
       probabilities.forEach((probability) => {
-        var cell = row.insertCell();
+        const cell = row.insertCell();
         cell.className = "empty";
         cell.textContent = probability;
 
         cell.addEventListener("click", function () {
-          var currentColour = this.className;
-          var nextColour =
+          const currentColour = this.className;
+          const nextColour =
             colours[(colours.indexOf(currentColour) + 1) % colours.length];
           this.className = nextColour;
         });
@@ -64,14 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
       rowContainer.appendChild(table);
     });
 
-    var tablesContainer = document.getElementById("tablesContainer");
+    const tablesContainer = document.getElementById("tablesContainer");
     tablesContainer.appendChild(rowContainer);
   });
 
-  var exportBtn = document.getElementById("exportBtn");
+  const exportBtn = document.getElementById("exportBtn");
   exportBtn.addEventListener("click", function () {
-    let html = document.documentElement.outerHTML;
-    let iframe = document.createElement("iframe");
+    const html = document.documentElement.outerHTML;
+    const iframe = document.createElement("iframe");
     document.body.appendChild(iframe);
     iframe.srcdoc = html;
 
@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ).style.display = "none";
       html2canvas(iframe.contentWindow.document.getElementById("content"))
         .then(function (canvas) {
-          let filename = "ai-views-snapshots.png";
-          let link = document.createElement("a");
+          const filename = "ai-views-snapshots.png";
+          const link = document.createElement("a");
           link.download = filename.toLowerCase();
           canvas.toBlob(function (blob) {
             link.href = URL.createObjectURL(blob);
@@ -97,6 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function toggleColourBlind() {
-  content = document.getElementById("content");
+  const content = document.getElementById("content");
   content.className = content.className == "colour-blind" ? "" : "colour-blind";
 }
