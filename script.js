@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const colours = ["empty", "mine", "possible", "reasonable", "unreasonable"];
 
-  const questions = [
+  var introText =
+    'Let "STEM+ AI" be short for "AI that\'s better at STEM research than the best human scientists (in addition to perhaps having other skills)". Then:';
+
+  var questions = [
     ["It's physically impossible to ever build STEM+ AI."],
     [
       "STEM+ AI will exist by the year 2035.",
@@ -26,11 +29,29 @@ document.addEventListener("DOMContentLoaded", function () {
     ["It would be an unprecedentedly huge tragedy if we never built STEM+ AI."],
   ];
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const questionsParam = urlParams.get("questions");
+  if (questionsParam) {
+    questions = [];
+    const questionsArray = questionsParam.split(",");
+    for (let i = 0; i < questionsArray.length; i += 2) {
+      questions.push(questionsArray.slice(i, i + 2));
+    }
+  }
+
+  const introTextParam = urlParams.get("intro");
+  if (introTextParam) {
+    introText = introTextParam;
+  }
+
   const probabilities = ["Below 1%", "~10%", "~50%", "~90%", "Above 99%"];
 
   if (document.getElementsByClassName("row-container").length) {
     return;
   }
+
+  const intro = document.getElementById("introText");
+  intro.textContent = introText;
 
   questions.forEach((row) => {
     const rowContainer = document.createElement("div");
