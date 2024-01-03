@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementsByClassName("row-container").length) {
+    return;
+  }
+
   const colours = ["empty", "mine", "possible", "reasonable", "unreasonable"];
 
-  var introText =
-    'Let "STEM+ AI" be short for "AI that\'s better at STEM research than the best human scientists (in addition to perhaps having other skills)". Then:';
-
-  var questions = [
+  const questions = [
     ["It's physically impossible to ever build STEM+ AI."],
     [
       "STEM+ AI will exist by the year 2035.",
@@ -32,23 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const questionsParam = urlParams.get("questions");
   if (questionsParam) {
-    questions = [];
+    questions.length = 0;
     const questionsArray = questionsParam.split(",");
     for (let i = 0; i < questionsArray.length; i += 2) {
       questions.push(questionsArray.slice(i, i + 2));
     }
   }
 
-  const introTextParam = urlParams.get("intro");
-  if (introTextParam) {
-    introText = introTextParam;
-  }
+  const DEFAULT_INTRO_TEXT =
+    'Let "STEM+ AI" be short for "AI that\'s better at STEM research than the best human scientists (in addition to perhaps having other skills)". Then:';
+  const introText = urlParams.get("intro") || DEFAULT_INTRO_TEXT;
 
   const probabilities = ["Below 1%", "~10%", "~50%", "~90%", "Above 99%"];
-
-  if (document.getElementsByClassName("row-container").length) {
-    return;
-  }
 
   const intro = document.getElementById("introText");
   intro.textContent = introText;
