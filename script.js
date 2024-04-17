@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const questionsParam = urlParams.get("questions");
   if (questionsParam) {
     questions.length = 0;
-    const questionsArray = questionsParam.split(",");
+    const questionsArray = questionsParam.split("|");
     for (let i = 0; i < questionsArray.length; i += 2) {
       questions.push(questionsArray.slice(i, i + 2));
     }

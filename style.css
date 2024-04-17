@@ -17,9 +17,11 @@ td {
   background-color: #d9ead3ff;
   height: 1px;
 }
+
 .mine.key-container {
   border-color: #b6d7a8;
 }
+
 .colour-blind .mine.mine {
   background-color: #38761dff;
   color: #ffffff;
@@ -29,9 +31,11 @@ td {
   background-color: #c9daf8ff;
   height: 1px;
 }
+
 .possible.key-container {
   border-color: #a4c2f4;
 }
+
 .colour-blind .possible {
   background-color: #6d9eebff;
 }
@@ -40,9 +44,11 @@ td {
   background-color: #d9d2e9ff;
   height: 1px;
 }
+
 .reasonable.key-container {
   border-color: #b4a7d6;
 }
+
 .colour-blind .reasonable {
   background-color: #b4a7d6ff;
 }
@@ -51,9 +57,11 @@ td {
   background-color: #f4ccccff;
   height: 1px;
 }
+
 .unreasonable.key-container {
   border-color: #e6b8af;
 }
+
 .colour-blind .unreasonable {
   background-color: #f4ccccff;
 }
@@ -67,6 +75,7 @@ td {
   background-color: #eef5f6ff;
   padding: 0.5em 1em;
 }
+
 .colour-code-container {
   display: flex;
   flex-direction: column;
@@ -78,6 +87,7 @@ td {
     flex-direction: row;
   }
 }
+
 .key-container {
   border-style: dashed;
   border-width: 2px;
@@ -87,20 +97,25 @@ td {
   padding: 0.5em;
   height: auto;
 }
+
 .colour-blind .key-container {
   color: #000000;
 }
+
 .key-caption {
   color: #666666;
   margin: 0.5em;
 }
+
 .colour-blind .key-caption {
   color: #000000;
 }
+
 .colour-blind-checkbox {
   margin: auto;
   color: #666666;
 }
+
 .colour-blind .colour-blind-checkbox {
   color: #000000;
 }
@@ -115,10 +130,12 @@ td {
     margin: 0;
   }
 }
+
 .table-container {
   display: flex;
   flex-direction: column;
 }
+
 .row-container {
   display: flex;
   flex-direction: column;
@@ -145,6 +162,21 @@ td {
   margin: auto;
   padding: 0.5em 1em;
   cursor: pointer;
+}
+
+.contact-link {
+  text-align: center;
+  margin: 1em 0;
+  color: #666666;
+
+  a {
+    color: inherit;
+  }
+
+  a:active {
+    color: inherit;
+  }
+
 }
 
 iframe {
