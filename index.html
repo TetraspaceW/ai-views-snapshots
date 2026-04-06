@@ -1,48 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <title>AI Views Snapshots</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta property="og:title" content="AI Views Snapshots" />
+    <meta property="og:image" content="preview.jpeg" />
+    <meta
+      property="og:url"
+      content="https://ai-views-snapshots.tetratopia.foundation/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+  </head>
 
-<head>
-  <title>AI Views Snapshots</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <meta name="title" property="og:title" content="AI Views Snapshots" />
-  <meta name="image" property="og:image" content="preview.jpeg" />
-</head>
+  <body>
+    <div id="content">
+      <div class="colour-code-background">
+        <div class="colour-code-container">
+          <p class="key-caption">Colour code:</p>
+          <div class="mine key-container">
+            My probability is roughly something like this.
+          </div>
+          <div class="possible key-container">
+            I could maybe see myself updating to a view like this after a lot
+            more thinking or after seeing a little more evidence.
+          </div>
+          <div class="reasonable key-container">
+            I feel confident this view is wrong, but I could easily see a
+            reasonable and informed person having this view.
+          </div>
+          <div class="unreasonable key-container">
+            I don't currently see a way for a reasonable and well-informed
+            person to end up with this view.
+          </div>
+        </div>
 
-<body>
-  <div id="content">
-    <div class="colour-code-background">
-      <div class="colour-code-container">
-        <p class="key-caption">Colour code:</p>
-        <div class="mine key-container">
-          My probability is roughly something like this.
-        </div>
-        <div class="possible key-container">
-          I could maybe see myself updating to a view like this after a lot
-          more thinking or after seeing a little more evidence.
-        </div>
-        <div class="reasonable key-container">
-          I feel confident this view is wrong, but I could easily see a
-          reasonable and informed person having this view.
-        </div>
-        <div class="unreasonable key-container">
-          I don't currently see a way for a reasonable and well-informed
-          person to end up with this view.
-        </div>
+        <label class="colour-blind-checkbox" id="colour-blind-checkbox"
+          >Colour blind mode:
+          <input type="checkbox" onClick="toggleColourBlind()"
+        /></label>
       </div>
 
-      <label class="colour-blind-checkbox" id="colour-blind-checkbox">Colour blind mode:
-        <input type="checkbox" onClick="toggleColourBlind()" /></label>
+      <div id="tablesContainer" class="table-container">
+        <p id="introText" class="intro-text"></p>
+      </div>
     </div>
-
-    <div id="tablesContainer" class="table-container">
-      <p id="introText" class="intro-text"></p>
-    </div>
-  </div>
-  <br />
-  <button id="exportBtn" class="export-button">Export as Image</button>
-  <p class="contact-link"><a href="https://thetetra.space/#/#contact">Contact Tetra</a> for feedback or bug reports.</p>
-  <script src="script.js"></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-</body>
-
+    <br />
+    <button id="exportBtn" class="export-button">Export as Image</button>
+    <p class="contact-link">
+      <a href="https://thetetra.space/#/#contact">Contact Tetra</a> for feedback
+      or bug reports.
+    </p>
+    <script src="script.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  </body>
 </html>
